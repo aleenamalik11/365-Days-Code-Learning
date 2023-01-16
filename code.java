@@ -22,3 +22,23 @@ class Solution
         return dp[a-1][b-1];
     }
 }
+
+/* Leaders in an array*/
+class Solution{
+    //Function to find the leaders in the array.
+    static ArrayList<Integer> leaders(int arr[], int n){
+        ArrayList<Integer> leads = new ArrayList<>();
+        leads.add(arr[n-1]);
+        int max=arr[n-1];
+        for(int i=n-2; i >=0; i--){
+            if(arr[i] >= max){
+                max=arr[i];
+                leads.add(arr[i]);
+            }
+        }
+        Collections.reverse(leads);
+        return leads;
+       
+    }
+
+}
